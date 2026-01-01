@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme following Material Design 2 -->
+    <style name="Theme.GoogleScholar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+
+        <!-- Background and surface colors -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+
+        <!-- Error color -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/on_error</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <!-- Text appearances -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Scholar.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Scholar.Headline2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Scholar.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Scholar.Body2</item>
+
+        <!-- Component styles -->
+        <item name="toolbarStyle">@style/Widget.Scholar.Toolbar</item>
+        <item name="navigationViewStyle">@style/Widget.Scholar.NavigationView</item>
+        <item name="searchViewStyle">@style/Widget.Scholar.SearchView</item>
+    </style>
+
+    <!-- Text Appearances -->
+    <style name="TextAppearance.Scholar.Headline1" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_size_headline</item>
+    </style>
+
+    <style name="TextAppearance.Scholar.Headline2" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+
+    <style name="TextAppearance.Scholar.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_size_subheading</item>
+    </style>
+
+    <style name="TextAppearance.Scholar.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+
+    <!-- Toolbar Style -->
+    <style name="Widget.Scholar.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/primary</item>
+        <item name="titleTextColor">@color/on_primary</item>
+        <item name="subtitleTextColor">@color/on_primary</item>
+        <item name="elevation">@dimen/toolbar_elevation</item>
+    </style>
+
+    <!-- Navigation View Style -->
+    <style name="Widget.Scholar.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="itemIconTint">@color/nav_drawer_item_color</item>
+        <item name="itemTextColor">@color/nav_drawer_item_color</item>
+        <item name="itemBackground">@drawable/nav_item_background</item>
+        <item name="itemShapeFillColor">@color/nav_drawer_selected</item>
+    </style>
+
+    <!-- SearchView Style -->
+    <style name="Widget.Scholar.SearchView" parent="Widget.MaterialComponents.SearchView">
+        <item name="android:background">@color/surface</item>
+        <item name="queryHint">@string/search_hint</item>
+    </style>
+
+    <!-- Button Styles -->
+    <style name="Widget.Scholar.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="cornerRadius">@dimen/corner_radius_small</item>
+    </style>
+
+    <style name="Widget.Scholar.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+</resources>

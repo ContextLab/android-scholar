@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+    <!-- Graduation cap icon representing Google Scholar -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M256,48L16,160l240,112 240,-112L256,48zM256,320l-160,-74.67V336c0,53.02 71.64,96 160,96s160,-42.98 160,-96V245.33L256,320zM464,176v128h-32V192.47l32,-16.47z" />
+</vector>

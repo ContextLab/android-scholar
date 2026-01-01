@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Graduation cap icon representing Google Scholar -->
+    <group
+        android:translateX="27"
+        android:translateY="27">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M27,5.05L1.69,17.78L27,30.51L52.31,17.78L27,5.05ZM27,33.78L9.08,25.29V35.56C9.08,41.17 16.65,45.73 27,45.73S44.92,41.17 44.92,35.56V25.29L27,33.78ZM48.92,18.67V32.22H45.54V20.36L48.92,18.67Z" />
+    </group>
+</vector>
