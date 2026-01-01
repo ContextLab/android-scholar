@@ -144,10 +144,9 @@ class MainActivity : AppCompatActivity(),
             }
 
             // Enable cookies
-            CookieManager.getInstance().apply {
-                setAcceptCookie(true)
-                setAcceptThirdPartyCookies(this@apply, true)
-            }
+            val cookieManager = CookieManager.getInstance()
+            cookieManager.setAcceptCookie(true)
+            cookieManager.setAcceptThirdPartyCookies(this, true)
 
             // Set scroll listener
             setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
