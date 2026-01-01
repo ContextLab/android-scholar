@@ -2,7 +2,6 @@ package com.scholar.android
 
 import android.app.Application
 import android.webkit.WebView
-import com.scholar.android.BuildConfig
 
 /**
  * Application class for Google Scholar Android app.
