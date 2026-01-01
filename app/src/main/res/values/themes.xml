@@ -35,7 +35,6 @@
         <!-- Component styles -->
         <item name="toolbarStyle">@style/Widget.Scholar.Toolbar</item>
         <item name="navigationViewStyle">@style/Widget.Scholar.NavigationView</item>
-        <item name="searchViewStyle">@style/Widget.Scholar.SearchView</item>
     </style>
 
     <!-- Text Appearances -->
@@ -73,12 +72,6 @@
         <item name="itemTextColor">@color/nav_drawer_item_color</item>
         <item name="itemBackground">@drawable/nav_item_background</item>
         <item name="itemShapeFillColor">@color/nav_drawer_selected</item>
-    </style>
-
-    <!-- SearchView Style -->
-    <style name="Widget.Scholar.SearchView" parent="Widget.MaterialComponents.SearchView">
-        <item name="android:background">@color/surface</item>
-        <item name="queryHint">@string/search_hint</item>
     </style>
 
     <!-- Button Styles -->
