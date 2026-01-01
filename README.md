@@ -38,7 +38,7 @@ A native Android application that provides a wrapper for Google Scholar (https:/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/android-scholar.git
+   git clone https://github.com/ContextLab/android-scholar.git
    cd android-scholar
    ```
 
