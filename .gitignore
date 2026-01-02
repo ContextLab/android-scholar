@@ -92,3 +92,8 @@ lint/tmp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Release keystore (do not commit)
+release-keystore.jks
+*.keystore
+*.jks
