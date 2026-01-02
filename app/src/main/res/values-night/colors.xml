@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode Color Overrides -->
+    <!-- These colors override the light mode defaults when the device is in dark mode -->
+
+    <!-- Background Colors -->
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="surface_variant">#2D2D2D</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_hint">#9AA0A6</color>
+    <color name="text_disabled">#6B6B6B</color>
+
+    <!-- On Colors -->
+    <color name="on_background">#FFFFFF</color>
+    <color name="on_surface">#FFFFFF</color>
+
+    <!-- Divider -->
+    <color name="divider">#3C3C3C</color>
+
+    <!-- Navigation Drawer -->
+    <color name="nav_drawer_background">#1E1E1E</color>
+    <color name="nav_drawer_selected">#2D3B4D</color>
+    <color name="nav_drawer_icon">#B0B0B0</color>
+    <color name="nav_drawer_icon_selected">#8AB4F8</color>
+
+    <!-- Progress -->
+    <color name="progress_background">#3C3C3C</color>
+</resources>

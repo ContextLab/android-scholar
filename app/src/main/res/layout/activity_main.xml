@@ -25,9 +25,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/primary"
-                app:navigationIcon="@drawable/ic_menu"
+                android:theme="@style/ThemeOverlay.Scholar.Toolbar"
+                app:navigationIconTint="@color/on_primary"
                 app:title="@string/app_name"
-                app:titleTextColor="@color/on_primary" />
+                app:titleTextColor="@color/on_primary"
+                app:menu="@menu/toolbar_menu" />
 
             <!-- Progress bar for page loading -->
             <ProgressBar
@@ -37,7 +39,7 @@
                 android:layout_height="4dp"
                 android:indeterminate="true"
                 android:visibility="gone"
-                app:indicatorColor="@color/secondary" />
+                app:indicatorColor="?attr/colorSecondary" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -46,17 +48,11 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:id="@+id/swipe_refresh"
+            <!-- Fragment Container - initial fragment loaded programmatically -->
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <WebView
-                    android:id="@+id/web_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                android:layout_height="match_parent" />
 
             <!-- Error layout -->
             <LinearLayout
@@ -82,7 +78,7 @@
                     android:layout_marginTop="@dimen/spacing_md"
                     android:text="@string/error_loading"
                     android:textAppearance="?attr/textAppearanceBody1"
-                    android:textColor="@color/text_primary" />
+                    android:textColor="?attr/colorOnSurface" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/retry_button"

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/article_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_md"
+    android:layout_marginTop="@dimen/spacing_sm"
+    android:layout_marginBottom="@dimen/spacing_sm"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardCornerRadius="@dimen/corner_radius_medium"
+    app:cardElevation="@dimen/elevation_low"
+    app:rippleColor="@color/primary_light">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_md">
+
+        <!-- Article Title -->
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="@dimen/text_size_subheading"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Deep Learning for Natural Language Processing: A Survey" />
+
+        <!-- Authors Line -->
+        <TextView
+            android:id="@+id/text_authors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_title"
+            tools:text="J Smith, A Johnson, M Williams - Nature, 2023" />
+
+        <!-- Source and Year -->
+        <TextView
+            android:id="@+id/text_source"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxs"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/text_hint"
+            android:textSize="@dimen/text_size_caption"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_authors"
+            tools:text="Nature Reviews - 2023"
+            tools:visibility="visible" />
+
+        <!-- Abstract/Snippet -->
+        <TextView
+            android:id="@+id/text_snippet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="3"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="@dimen/text_size_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_source"
+            tools:text="This paper presents a comprehensive survey of deep learning techniques for natural language processing, covering recent advances in transformer architectures, attention mechanisms, and pre-trained language models..." />
+
+        <!-- Bottom Action Row -->
+        <LinearLayout
+            android:id="@+id/action_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_snippet">
+
+            <!-- Citation Count Chip -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_citations"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="false"
+                android:clickable="true"
+                android:focusable="true"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_caption"
+                app:chipBackgroundColor="@color/surface_variant"
+                app:chipCornerRadius="@dimen/corner_radius_small"
+                app:chipIcon="@drawable/ic_citation"
+                app:chipIconSize="16dp"
+                app:chipIconTint="@color/text_secondary"
+                app:chipMinHeight="28dp"
+                app:chipMinTouchTargetSize="0dp"
+                app:chipStrokeColor="@color/divider"
+                app:chipStrokeWidth="1dp"
+                tools:text="1,234" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- PDF Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_pdf"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:paddingHorizontal="@dimen/spacing_sm"
+                android:text="@string/pdf"
+                android:textColor="?attr/colorSecondary"
+                android:textSize="@dimen/text_size_caption"
+                android:visibility="gone"
+                app:icon="@drawable/ic_pdf"
+                app:iconSize="18dp"
+                app:iconTint="?attr/colorSecondary"
+                tools:visibility="visible" />
+
+            <!-- Save/Library Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_save"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:paddingHorizontal="@dimen/spacing_sm"
+                android:contentDescription="@string/save_to_library"
+                app:icon="@drawable/ic_save"
+                app:iconSize="18dp"
+                app:iconTint="@color/text_secondary" />
+
+            <!-- Share Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_share"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:paddingHorizontal="@dimen/spacing_sm"
+                android:contentDescription="@string/menu_share"
+                app:icon="@drawable/ic_share"
+                app:iconSize="18dp"
+                app:iconTint="@color/text_secondary" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

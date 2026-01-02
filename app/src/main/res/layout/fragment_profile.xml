@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Main Content Area with SwipeRefreshLayout -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Profile Content (when loaded) -->
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/profile_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Profile Header Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/spacing_md"
+                        app:cardBackgroundColor="?attr/colorSurface"
+                        app:cardCornerRadius="@dimen/corner_radius_medium"
+                        app:cardElevation="@dimen/elevation_low">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <!-- Profile Image and Name Row -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <!-- Profile Image -->
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/image_profile"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_person_placeholder"
+                                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CircleImage" />
+
+                                <!-- Name and Affiliation -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/spacing_md"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/text_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textAppearance="?attr/textAppearanceHeadline2"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="@dimen/text_size_title"
+                                        android:textStyle="bold"
+                                        tools:text="Dr. John Smith" />
+
+                                    <TextView
+                                        android:id="@+id/text_affiliation"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacing_xs"
+                                        android:textAppearance="?attr/textAppearanceBody2"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="@dimen/text_size_body"
+                                        tools:text="Professor of Computer Science, Stanford University" />
+
+                                    <TextView
+                                        android:id="@+id/text_email"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacing_xs"
+                                        android:textAppearance="?attr/textAppearanceBody2"
+                                        android:textColor="@color/text_hint"
+                                        android:textSize="@dimen/text_size_caption"
+                                        android:visibility="gone"
+                                        tools:text="Verified email at stanford.edu"
+                                        tools:visibility="visible" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <!-- Stats Row -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_md"
+                                android:background="@color/surface_variant"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/spacing_md">
+
+                                <!-- Citations -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/text_citations"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textAppearance="?attr/textAppearanceHeadline2"
+                                        android:textColor="?attr/colorPrimary"
+                                        android:textSize="@dimen/text_size_title"
+                                        android:textStyle="bold"
+                                        tools:text="12,345" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/citations"
+                                        android:textAppearance="?attr/textAppearanceBody2"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="@dimen/text_size_caption" />
+
+                                </LinearLayout>
+
+                                <!-- h-index -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/text_h_index"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textAppearance="?attr/textAppearanceHeadline2"
+                                        android:textColor="?attr/colorPrimary"
+                                        android:textSize="@dimen/text_size_title"
+                                        android:textStyle="bold"
+                                        tools:text="45" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/h_index"
+                                        android:textAppearance="?attr/textAppearanceBody2"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="@dimen/text_size_caption" />
+
+                                </LinearLayout>
+
+                                <!-- i10-index -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/text_i10_index"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textAppearance="?attr/textAppearanceHeadline2"
+                                        android:textColor="?attr/colorPrimary"
+                                        android:textSize="@dimen/text_size_title"
+                                        android:textStyle="bold"
+                                        tools:text="78" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/i10_index"
+                                        android:textAppearance="?attr/textAppearanceBody2"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="@dimen/text_size_caption" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <!-- Research Interests -->
+                            <TextView
+                                android:id="@+id/label_interests"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_md"
+                                android:text="@string/research_interests"
+                                android:textAppearance="?attr/textAppearanceBody2"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_size_caption"
+                                android:visibility="gone"
+                                tools:visibility="visible" />
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/chip_group_interests"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_sm"
+                                android:visibility="gone"
+                                app:chipSpacingHorizontal="@dimen/spacing_xs"
+                                app:chipSpacingVertical="@dimen/spacing_xs"
+                                tools:visibility="visible" />
+
+                            <!-- Action Buttons Row -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_md"
+                                android:gravity="end"
+                                android:orientation="horizontal">
+
+                                <!-- Sign In Button (shown when not logged in) -->
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/button_sign_in"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/sign_in_to_edit"
+                                    android:visibility="gone"
+                                    app:icon="@drawable/ic_google"
+                                    app:iconGravity="start"
+                                    app:iconSize="14dp"
+                                    tools:visibility="visible" />
+
+                                <!-- Edit Profile Button (shown when logged in and viewing own profile) -->
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/button_edit_profile"
+                                    style="@style/Widget.MaterialComponents.Button"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/edit_profile"
+                                    android:visibility="gone"
+                                    app:icon="@drawable/ic_edit"
+                                    app:iconGravity="start"
+                                    tools:visibility="visible" />
+
+                                <!-- Change Profile Button - styled as outlined button -->
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/button_change_profile"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginStart="@dimen/spacing_sm"
+                                    android:text="@string/change_profile" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Citation History Chart Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_citation_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="?attr/colorSurface"
+                        app:cardCornerRadius="@dimen/corner_radius_medium"
+                        app:cardElevation="@dimen/elevation_low"
+                        tools:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <!-- Chart Header -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/citations_per_year"
+                                android:textAppearance="?attr/textAppearanceBody1"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textStyle="bold" />
+
+                            <!-- Horizontal Chip Group for Quick Time Range Selection -->
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_sm"
+                                android:scrollbars="none">
+
+                                <com.google.android.material.chip.ChipGroup
+                                    android:id="@+id/chip_group_time_range"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:chipSpacingHorizontal="@dimen/spacing_xs"
+                                    app:singleSelection="true"
+                                    app:selectionRequired="true">
+
+                                    <com.google.android.material.chip.Chip
+                                        android:id="@+id/chip_all_time"
+                                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:checked="true"
+                                        android:text="@string/time_range_all" />
+
+                                    <com.google.android.material.chip.Chip
+                                        android:id="@+id/chip_5_years"
+                                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/time_range_5_years" />
+
+                                    <com.google.android.material.chip.Chip
+                                        android:id="@+id/chip_since_2020"
+                                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/time_range_since_2020" />
+
+                                    <com.google.android.material.chip.Chip
+                                        android:id="@+id/chip_since_2015"
+                                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/time_range_since_2015" />
+
+                                </com.google.android.material.chip.ChipGroup>
+
+                            </HorizontalScrollView>
+
+                            <!-- Bar Chart -->
+                            <com.github.mikephil.charting.charts.BarChart
+                                android:id="@+id/chart_citations"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_marginTop="@dimen/spacing_md" />
+
+                            <!-- Selected Value Display -->
+                            <TextView
+                                android:id="@+id/text_selected_citation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_sm"
+                                android:gravity="center"
+                                android:textAppearance="?attr/textAppearanceBody2"
+                                android:textColor="@color/text_secondary"
+                                android:visibility="gone"
+                                tools:text="1,234 citations in 2023"
+                                tools:visibility="visible" />
+
+                            <!-- Empty State for No Citation Data -->
+                            <TextView
+                                android:id="@+id/text_no_citation_data"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="@dimen/spacing_lg"
+                                android:text="@string/no_citation_data"
+                                android:textAppearance="?attr/textAppearanceBody2"
+                                android:textColor="@color/text_hint"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Publications Section Header with Sort -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/my_publications"
+                            android:textAppearance="?attr/textAppearanceHeadline2"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="@dimen/text_size_subheading"
+                            android:textStyle="bold" />
+
+                        <!-- Sort Chips -->
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chip_group_sort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:singleSelection="true"
+                            app:selectionRequired="true">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_sort_citations"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="@string/sort_by_citations"
+                                android:textSize="11sp" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_sort_year"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sort_by_year"
+                                android:textSize="11sp" />
+
+                        </com.google.android.material.chip.ChipGroup>
+
+                    </LinearLayout>
+
+                    <!-- Publications RecyclerView -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_publications"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingTop="@dimen/spacing_sm"
+                        android:paddingBottom="@dimen/spacing_xxl"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/item_article_card" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <!-- Input State (No Profile Set) -->
+            <ScrollView
+                android:id="@+id/input_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:visibility="visible"
+                tools:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_xl">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="@dimen/spacing_xl"
+                        android:contentDescription="@string/nav_my_profile"
+                        android:src="@drawable/ic_person_placeholder"
+                        app:tint="?attr/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:text="@string/nav_my_profile"
+                        android:textAppearance="?attr/textAppearanceHeadline2"
+                        android:textColor="?attr/colorOnSurface" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:gravity="center"
+                        android:text="@string/profile_instructions"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/text_secondary" />
+
+                    <!-- Author ID/Name Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_layout_author_id"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:hint="@string/author_input_hint"
+                        app:boxStrokeColor="@color/primary"
+                        app:hintTextColor="@color/text_secondary"
+                        app:startIconDrawable="@drawable/ic_search"
+                        app:startIconTint="@color/text_hint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_author_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionSearch"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_hint" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Find Profile Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_find_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:text="@string/find_profile" />
+
+                    <!-- Help Text -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4dp"
+                        android:text="@string/how_to_find_id"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/text_hint"
+                        android:textSize="@dimen/text_size_caption" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <!-- Error State -->
+            <LinearLayout
+                android:id="@+id/error_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_xl"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:contentDescription="@string/error_loading"
+                    android:src="@drawable/ic_error"
+                    app:tint="@color/error" />
+
+                <TextView
+                    android:id="@+id/text_error_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:gravity="center"
+                    android:text="@string/profile_not_found"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_retry"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="@string/retry" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_try_different"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:text="@string/try_different_id" />
+
+            </LinearLayout>
+
+            <!-- Author Search Results State -->
+            <LinearLayout
+                android:id="@+id/author_search_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <!-- Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/spacing_md"
+                    android:paddingVertical="@dimen/spacing_sm">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/select_your_profile"
+                        android:textAppearance="?attr/textAppearanceHeadline2"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="@dimen/text_size_subheading"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_cancel_search"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@android:string/cancel"
+                        android:textColor="@color/text_secondary" />
+
+                </LinearLayout>
+
+                <!-- Author Results List -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_author_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/spacing_sm"
+                    android:paddingBottom="@dimen/spacing_xxl"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_author_search" />
+
+            </LinearLayout>
+
+            <!-- Not Signed In State -->
+            <LinearLayout
+                android:id="@+id/not_signed_in_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_xl"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/sign_in_with_google"
+                    android:src="@drawable/ic_person_placeholder"
+                    app:tint="?attr/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:text="@string/nav_my_profile"
+                    android:textAppearance="?attr/textAppearanceHeadline2"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:gravity="center"
+                    android:text="@string/sign_in_to_view_profile"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/text_secondary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_sign_in_prompt"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:text="@string/sign_in_with_google"
+                    app:icon="@drawable/ic_google"
+                    app:iconGravity="start"
+                    app:iconPadding="@dimen/spacing_sm" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Loading Overlay -->
+    <FrameLayout
+        android:id="@+id/loading_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/colorBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <ProgressBar
+            style="@style/Widget.MaterialComponents.CircularProgressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="?attr/colorPrimary"
+            app:trackColor="@color/progress_background" />
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

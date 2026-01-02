@@ -66,6 +66,15 @@
         <item name="elevation">@dimen/toolbar_elevation</item>
     </style>
 
+    <!-- Toolbar Theme Overlay - ensures all icons are properly tinted white -->
+    <style name="ThemeOverlay.Scholar.Toolbar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="colorControlNormal">#FFFFFF</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#FFFFFF</item>
+        <item name="actionMenuTextColor">#FFFFFF</item>
+        <item name="iconTint">#FFFFFF</item>
+    </style>
+
     <!-- Navigation View Style -->
     <style name="Widget.Scholar.NavigationView" parent="Widget.MaterialComponents.NavigationView">
         <item name="itemIconTint">@color/nav_drawer_item_color</item>
@@ -83,5 +92,20 @@
 
     <style name="Widget.Scholar.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <!-- Shape Appearances -->
+    <style name="ShapeAppearance.App.CircleImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- SearchView Style for light backgrounds -->
+    <style name="Widget.Scholar.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:editTextColor">@color/text_primary</item>
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="searchHintIcon">@null</item>
     </style>
 </resources>

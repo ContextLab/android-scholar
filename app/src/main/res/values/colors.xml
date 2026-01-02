@@ -51,4 +51,16 @@
     <!-- Progress -->
     <color name="progress_background">#E8EAED</color>
     <color name="progress_tint">#4285F4</color>
+
+    <!-- Dark Mode Colors (for night qualifier) -->
+    <color name="background_dark">#121212</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="surface_variant_dark">#2D2D2D</color>
+    <color name="on_surface_dark">#FFFFFF</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_dark">#B0B0B0</color>
+    <color name="text_hint_dark">#9AA0A6</color>
+    <color name="divider_dark">#3C3C3C</color>
+    <color name="nav_drawer_selected_dark">#2D3B4D</color>
+    <color name="progress_background_dark">#3C3C3C</color>
 </resources>

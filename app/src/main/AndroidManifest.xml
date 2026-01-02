@@ -41,6 +41,55 @@
             </intent-filter>
         </activity>
 
+        <!-- Profile Edit Activity - WebView for editing Google Scholar profile -->
+        <activity
+            android:name=".ui.profile.ProfileEditActivity"
+            android:exported="false"
+            android:label="@string/edit_profile"
+            android:theme="@style/Theme.GoogleScholar"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+
+        <!-- Article View Activity - WebView for viewing articles in-app -->
+        <activity
+            android:name=".ui.article.ArticleViewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GoogleScholar"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+
+        <!-- Profile View Activity - View any author's profile (read-only) -->
+        <activity
+            android:name=".ui.profile.ProfileViewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GoogleScholar"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+
+        <!-- Author Search Activity - Search results for authors by interest -->
+        <activity
+            android:name=".ui.profile.AuthorSearchActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GoogleScholar"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_sm"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/surface_variant"
+    app:cardCornerRadius="@dimen/corner_radius_medium"
+    app:cardElevation="0dp"
+    app:rippleColor="@color/primary_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_sm">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            tools:text="BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" />
+
+        <!-- Authors and Year -->
+        <TextView
+            android:id="@+id/text_authors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxs"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="@color/text_secondary"
+            tools:text="J Devlin, MW Chang, K Lee - 2018" />
+
+        <!-- Citation Count -->
+        <TextView
+            android:id="@+id/text_citations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxs"
+            android:drawablePadding="@dimen/spacing_xxs"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="@color/text_hint"
+            app:drawableStartCompat="@drawable/ic_citation"
+            app:drawableTint="@color/text_hint"
+            tools:text="87,432" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

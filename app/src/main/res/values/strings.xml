@@ -30,9 +30,128 @@
     <string name="error_no_internet">No internet connection</string>
     <string name="retry">Retry</string>
 
+    <!-- PDF -->
+    <string name="error_opening_pdf">Could not open PDF</string>
+    <string name="error_downloading_pdf">Could not download PDF</string>
+    <string name="downloading_pdf">Downloading PDF…</string>
+    <string name="download_started">Download started</string>
+
+    <!-- Coming Soon -->
+    <string name="coming_soon">Coming Soon</string>
+    <string name="feature_coming_soon">This feature is coming soon!</string>
+
     <!-- About -->
     <string name="about_description">Google Scholar provides a simple way to broadly search for scholarly literature across many disciplines and sources.</string>
     <string name="version_format">Version %s</string>
+
+    <!-- Results Fragment -->
+    <string name="no_results">No Results</string>
+    <string name="empty_state_title">No Results Found</string>
+    <string name="empty_state_subtitle">Try adjusting your search terms or filters</string>
+    <string name="initial_state_title">Search Scholar</string>
+    <string name="initial_state_subtitle">Find scholarly articles, theses, books, and more</string>
+    <string name="sort_by_relevance">Sort by relevance</string>
+    <string name="sort_by_date">Sort by date</string>
+    <string name="sort_by_citations">Citations</string>
+    <string name="sort_by_year">Year</string>
+    <string name="pdf">PDF</string>
+    <string name="save_to_library">Save to Library</string>
+    <string name="cited_by">Cited by %d</string>
+    <string name="loading_more">Loading more results...</string>
+
+    <!-- Library Fragment -->
+    <string name="library_empty_title">No Saved Articles</string>
+    <string name="library_empty_subtitle">Articles you save will appear here</string>
+    <string name="library_article_count">%d articles</string>
+    <string name="library_article_count_singular">1 article</string>
+    <string name="article_removed">Article removed from library</string>
+    <string name="article_saved">Article saved to library</string>
+    <string name="undo">Undo</string>
+
+    <!-- Profile -->
+    <string name="enter_author_id">Enter your Google Scholar Author ID</string>
+    <string name="profile_instructions">Enter your Author ID or search by name</string>
+    <string name="author_input_hint">Author ID or name</string>
+    <string name="find_profile">Find Profile</string>
+    <string name="author_id_hint">e.g., ABC123XYZ</string>
+    <string name="searching_authors">Searching for authors…</string>
+    <string name="select_your_profile">Select Your Profile</string>
+    <string name="citations">Citations</string>
+    <string name="h_index">h-index</string>
+    <string name="i10_index">i10-index</string>
+    <string name="my_publications">My Publications</string>
+    <string name="change_profile">View Another Profile</string>
+    <string name="profile_not_found">Could not find author profile</string>
+    <string name="how_to_find_id">To find your Author ID, go to your Google Scholar profile and copy the ID from the URL (the part after user=)</string>
+    <string name="research_interests">Research Interests</string>
+    <string name="try_different_id">Try a Different ID</string>
+    <string name="verified_email_at">Verified email at %s</string>
+    <string name="citations_per_year">Citations per Year</string>
+    <string name="time_range_all">All time</string>
+    <string name="time_range_5_years">Last 5 years</string>
+    <string name="time_range_since_2020">Since 2020</string>
+    <string name="time_range_since_2015">Since 2015</string>
+    <string name="citations_in_year" formatted="false">%d citations in %d</string>
+    <string name="no_citation_data">No citation data available</string>
+
+    <!-- Settings/Preferences -->
+    <string name="pref_category_search">Search</string>
+    <string name="pref_category_display">Display</string>
+    <string name="pref_category_downloads">Downloads</string>
+    <string name="pref_category_about">About</string>
+    <string name="pref_default_sort_title">Default Sort Order</string>
+    <string name="pref_default_sort_summary">Sort search results by</string>
+    <string name="pref_include_patents_title">Include Patents</string>
+    <string name="pref_include_patents_summary">Show patent results in search</string>
+    <string name="pref_include_citations_title">Include Citations</string>
+    <string name="pref_include_citations_summary">Show citation results in search</string>
+    <string name="pref_theme_title">Theme</string>
+    <string name="pref_theme_summary">Choose app theme</string>
+    <string name="pref_show_abstracts_title">Show Abstracts</string>
+    <string name="pref_show_abstracts_summary">Display article abstracts in results</string>
+    <string name="pref_wifi_only_title">Download PDFs on WiFi Only</string>
+    <string name="pref_wifi_only_summary">Prevent PDF downloads on mobile data</string>
+    <string name="pref_version_title">Version</string>
+    <string name="pref_clear_cache_title">Clear Cache</string>
+    <string name="pref_clear_cache_summary">Clear search cache and cookies</string>
+    <string name="cache_cleared">Cache cleared successfully</string>
+
+    <!-- Profile Edit and Authentication -->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="edit_publications">Manage Publications</string>
+    <string name="edit_coauthors">Manage Co-Authors</string>
+    <string name="error_no_profile_id">No profile ID provided</string>
+    <string name="error_opening_link">Could not open link</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_to_edit">Sign in to Edit</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="signed_in_as">Signed in as %s</string>
+    <string name="sign_in_success">Signed in successfully</string>
+    <string name="sign_in_failed">Sign in failed</string>
+    <string name="sign_out_success">Signed out successfully</string>
+    <string name="link_profile">Link Profile</string>
+    <string name="link_profile_prompt">Link this Scholar profile to your Google account?</string>
+    <string name="profile_linked">Profile linked to your account</string>
+    <string name="must_sign_in_to_edit">Sign in with Google to edit your profile</string>
+    <string name="sign_in_to_view_profile">Sign in with your Google account to view and manage your Scholar profile</string>
+    <string name="link_your_profile">Link your Google Scholar profile to your account</string>
+    <string name="sign_in_to_access_library">Sign in with your Google account to save articles and sync your library</string>
+
+    <!-- Article View -->
+    <string name="article_cite">Cite</string>
+    <string name="article_abstract">Abstract</string>
+    <string name="article_cited_by_section">Cited By</string>
+    <string name="article_related">Related Articles</string>
+    <string name="article_view_all_citations">View all citations</string>
+    <string name="article_no_abstract">No abstract available for this article.</string>
+    <string name="article_citation_copied">Citation copied to clipboard</string>
+    <string name="article_select_citation_format">Select Citation Format</string>
+    <string name="article_citation_mla">MLA</string>
+    <string name="article_citation_apa">APA</string>
+    <string name="article_citation_chicago">Chicago</string>
+    <string name="article_citation_harvard">Harvard</string>
+    <string name="article_citation_bibtex">BibTeX</string>
+    <string name="article_copy">Copy</string>
 
     <!-- URLs -->
     <string name="url_scholar_home" translatable="false">https://scholar.google.com/</string>
